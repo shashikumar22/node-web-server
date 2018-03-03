@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname+'/public'));
 app.set('view engine', 'hbs');
@@ -48,6 +49,6 @@ app.get('/bad', (req,res) => {
 	});
 })
 
-app.listen(3000, () => {
-	console.log('connecting to port: 3000')
+app.listen(port, () => {
+	console.log('connecting to port: '+port);
 });
